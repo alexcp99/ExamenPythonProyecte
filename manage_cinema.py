@@ -36,7 +36,9 @@ class Cinema:
             row: la fila de la butaca
             seat: el numero de la butaca
         """
-        if self.__seating[row][seat] is None:
+        """Deberia de ser diferente a None, si es diferente a None, quiere decir que esta ocupada
+        """
+        if self.__seating[row][seat] != None:
             self.__seating[row][seat] = "occupied"
 
     def count_free_seats(self,rows_seats,total):
@@ -46,9 +48,14 @@ class Cinema:
             rows_seats: lista de butacas a buscar
             total: valor inicial donde se acumulará el total
         """
-        for row, seat in rows_seats:
+        """for i in self.__seating[1:]:
+            for j in i:
+                if i[j] == None:
+                    total = total + 1"""
+        
+        for row, seat in self.__seating[1:]:
             if self.__seating[row][seat] == None:
-                total+=1
+                total=total + 1
 
 #------------------------------------------- MAIN -----------------------------------------------
 cinema = Cinema(rows=10, seats_per_row=8)

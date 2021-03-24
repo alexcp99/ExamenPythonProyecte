@@ -1,15 +1,12 @@
 from libro import Libro
 from autor import Autor
 def get_list():
-    dic = {}
+    """dic = {}
     f = open("alo.txt", mode="rt", encoding="utf-8")
-    """for linea in f:
-        if linea[f] =! None:
-            diccionario.append(f)
-    return diccionario"""
-  
-print  #print("he leído: " + linea)
-    #f.readlines()
+    for linea in f:
+            dic.append(linea[f])
+    return dic"""
+
         
 #-----------------------------------------
 a = get_list()
@@ -21,14 +18,17 @@ lista = list()
 lista.append(l1)
 lista.append(l2)
 lista.append(l3)
-print(lista)
+for i in lista:
+    print(lista[i])
 
 def mas_antiguos(l, year):
+    lista = list()
     for i in l:
         if l[i].anyo > "1900" and l[i].anyo < "2021":
-            return l[i].titulo
+            l[i].get_titulo()
         else:
             raise ValueError("El anyo no es valido")
+    return l
 
 
 b = mas_antiguos(lista, "2010")
