@@ -42,21 +42,18 @@ class Cinema:
         if self.__seating[row][seat] != None:
             self.__seating[row][seat] = "occupied"
 
-    def count_free_seats(self,rows_seats,total):
+    def count_free_seats(self,rows_seats):
         """
         Calcula la cantidad de butacas libres que hay en una lista
         Args:
             rows_seats: lista de butacas a buscar
             total: valor inicial donde se acumulará el total
         """
-        """for i in self.__seating[1:]:
-            for j in i:
-                if i[j] == None:
-                    total = total + 1"""
-        
+        total = 0
         for row, seat in rows_seats:
             if self.__seating[row][seat] == None:
                 total=total + 1
+        return total
 
 #------------------------------------------- MAIN -----------------------------------------------
 cinema = Cinema(rows=10, seats_per_row=8)
@@ -70,14 +67,20 @@ cinema.print_seating()
 #ERROR 2: le paso la lista de "seats" donde debería haber 2 libres y me dice que hay 0.
 print("\n------------- Error 2 -----------------")
 seats = [(2,4), (3,1), (5,2)]
-total = 0
-cinema.count_free_seats(seats,total)
-print("total: "+str(total))
+
+a = cinema.count_free_seats(seats)
+print("total: " , a)
+     
+#El error esta en el total, que la funcion no nos lo devolvia
+#por tanto lo he devuelto y lo he definido directament dentro de la funcion
+#para en el main llama a = funcion(), donde ese a ja sera el total de butacas libres
+
+        
 
 #ERROR 3: quiero modificar la butaca (2,4) de la lista anterior para que sea la (3,4) y no me deja.
 print("\n------------- Error 3 -----------------")
-seats[0][1]=3
-total = 0
-cinema.count_free_seats(seats,total)
-print("total: "+str(total))
-        
+seats[2][4]== 3 #Queremos modificar la 2,4
+seat[0] == (3,4)
+a = cinema.count_free_seats(seat)
+print("total: ", a)
+#He añadido en la posicinon 0 de seat el nuevo asiento
