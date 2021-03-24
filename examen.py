@@ -1,20 +1,24 @@
 from libro import Libro
 from autor import Autor
 def get_list():
-    """dic = {}
+    dic = {}
     f = open("alo.txt", mode="rt", encoding="utf-8")
-    for linea in f:
-            dic.append(linea[f])
-    return dic"""
+    for i in f:
+            print(i)
+            if len(f[i]) == 4:
+                dic.append(f[i])
+            if len(f[i]) == 3:
+                dic2.append(f[i])
+    return dic,dic2
 
         
 #-----------------------------------------
 a = get_list()
-("La palabra con mayor tamaño sera: ", a)
+print(a)
 l1 = Libro(autor = Autor(id_autor = "1", nombre = "Alex", apellido = "Cebolla"), titulo = "quijote", anyo = "2010")
 l2 = Libro(autor = Autor(id_autor = "2", nombre = "Carmen", apellido = "Pardo"), titulo = "hola", anyo = "1980")
 l3 = Libro(autor = Autor(id_autor = "3", nombre = "Luis", apellido = "Cebolla"), titulo = "adios", anyo = "2011")
-lista = list()
+lista = []
 lista.append(l1)
 lista.append(l2)
 lista.append(l3)

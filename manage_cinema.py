@@ -53,7 +53,7 @@ class Cinema:
                 if i[j] == None:
                     total = total + 1"""
         
-        for row, seat in self.__seating[1:]:
+        for row, seat in rows_seats:
             if self.__seating[row][seat] == None:
                 total=total + 1
 
