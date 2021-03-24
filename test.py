@@ -1,5 +1,7 @@
 import unittest
 from examen import *
+from libro import *
+from autor import *
 
 class Pruebas(unittest.TestCase):
     """
@@ -11,3 +13,10 @@ class Pruebas(unittest.TestCase):
     def test_mas_antiguos(self):
         l2 = Libro(autor = Autor(id_autor = "2", nombre = "Carmen", apellido = "Pardo"), titulo = "hola", anyo = "1980")
         self.assertEqual(l2.get_titulo, "hola")
+
+    def test_mas_antiguos(self):
+        l1 = Libro(autor = Autor(id_autor = "2", nombre = "Carmen", apellido = "Pardo"), titulo = "hola", anyo = "1980")
+        self.assertEqual(l2.get_autor, "Carmen")
+
+
+    

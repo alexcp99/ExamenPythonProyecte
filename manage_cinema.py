@@ -10,7 +10,8 @@ class Cinema:
         """
         self.__rows = rows
         self.__seats_per_row = seats_per_row
-        self.__seating = []
+        self.__seating = [None] 
+        #El seating lo inicializamos como None
     
     def create_cinema_seating(self):
         """
